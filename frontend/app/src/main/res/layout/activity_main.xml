@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:text="@string/title"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/titlev2"
+        android:text="@string/titlev2"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_below="@+id/title"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/epost2"
+        android:hint="@string/epost2"
+        android:textColor="@color/black"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:selectAllOnFocus="true"
+        android:layout_below="@+id/titlev2"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/pass2"
+        android:hint="@string/pass2"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        android:layout_below="@+id/username"/>
+
+    <LinearLayout
+        android:id="@+id/LinLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/password"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/loginBtn"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="30dp"
+            android:background="@color/red"
+            android:text="@string/logg_på"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/createNewAccBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loginBtn"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="75dp"
+            android:gravity="center"
+            android:text="@string/opprett_ny_bruker"
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
+
+</RelativeLayout>

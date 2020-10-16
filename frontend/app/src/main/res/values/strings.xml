@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Budsjett</string>
+    <string name="title">Studentbudsjett</string>
+    <string name="titlev2">Applikasjon</string>
+
+    <string name="epost">Epost:</string>
+    <string name="epost2">epost</string>
+    <string name="pass">Passord:</string>
+    <string name="pass2">passord</string>
+
+    <string name="logg_på">Logg på</string>
+    <string name="opprett_ny_bruker">Opprett ny bruker</string>
+    <string name="opprett_bruker">Opprett bruker</string>
+
+    <string name="fornavn">Fornavn:</string>
+    <string name="fornavn2">fornavn</string>
+
+    <string name="etternavn">Etternavn:</string>
+    <string name="etternavn2">etternavn</string>
+
+    <string name="adresse">Adresse: </string>
+    <string name="adresse2">adresse</string>
+
+    <string name="sted">Sted:</string>
+    <string name="sted2">sted</string>
+
+    <string name="brukernavn">Brukernavn:</string>
+    <string name="brukernavn2">brukernavn</string>
+
+    <string name="success">Success!</string>
+    <string name="fail">Failure!</string>
+
+    <string name="harIgjenKr">Du har igjen: </string>
+    <string name="legg_til">Legg til vare</string>
+    <string name="fjern">Fjern vare</string>
+    <string name="kroner">kr</string>
+</resources>
