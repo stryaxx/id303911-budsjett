@@ -30,8 +30,13 @@
     <string name="success">Success!</string>
     <string name="fail">Failure!</string>
 
+    <string name="ny_handel">Ny handel</string>
+    <string name="vareDBBtn">Varedatabase</string>
+    <string name="logutBtn">Logg ut</string>
+    <string name="info">Om det er første gangen du bruker appliaksjonen her så må du legge til varer i databasen først</string>
+
     <string name="harIgjenKr">Du har igjen: </string>
-    <string name="legg_til">Legg til vare</string>
-    <string name="fjern">Fjern vare</string>
+    <string name="legg_til">Legg til</string>
+    <string name="fjern">Fjern</string>
     <string name="kroner">kr</string>
 </resources>

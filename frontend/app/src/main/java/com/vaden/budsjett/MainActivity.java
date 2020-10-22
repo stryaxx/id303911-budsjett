@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.vaden.budsjett.sources.LoginDataSource;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +50,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login() {
+        System.out.println("LOGIN CALLED");
+        LoginDataSource loginDataSource = new LoginDataSource();
+        String token = loginDataSource.login(username.getText().toString(), password.getText().toString());
+        if (token.length() != 0) {
+            //SUCCESS
+            System.out.println("Login success!");
+
+            Toast.makeText(MainActivity.this, "Login success!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, Navigation.class);
+            startActivity(intent);
+        } else {
+            //FAILED LOGIN
+            System.out.println("Email or password failed");
+            Toast.makeText(MainActivity.this, "Fail login! Either email or password are wrong.", Toast.LENGTH_LONG).show();
+        }
+
 
     }
 

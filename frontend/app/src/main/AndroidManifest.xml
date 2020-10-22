@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateNewAccount"></activity>
+        <activity android:name=".StoreActivity"></activity>
+        <activity android:name=".Navigation"></activity>
     </application>
 
 </manifest>
