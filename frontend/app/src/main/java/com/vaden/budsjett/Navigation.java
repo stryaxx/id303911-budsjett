@@ -28,5 +28,20 @@ public class Navigation extends AppCompatActivity {
             }
         });
 
+        vareDBBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Navigation.this, VareDB.class);
+                startActivity(intent);
+            }
+        });
+
+        logutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO CODE HERE
+            }
+        });
+
     }
 }

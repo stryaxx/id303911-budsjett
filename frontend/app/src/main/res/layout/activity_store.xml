@@ -22,7 +22,7 @@
             android:textSize="18dp" />
 
         <TextView
-            android:id="@+id/placeholderKroner"
+            android:id="@+id/amountLeftTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -52,6 +52,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/removeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -61,6 +62,7 @@
             android:text="@string/fjern"/>
 
         <Button
+            android:id="@+id/addBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -1,14 +1,5 @@
 package com.vaden.budsjett;
 
-import android.content.Context;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import java.util.HashMap;
-import java.util.Map;
-
-import androidx.annotation.Nullable;
-
 public class Services {
     public static final String BASE_URL = "http://192.168.1.56:8080/";
     public static final String LOGIN_URL = BASE_URL + "Budsjett/api/account/login?";

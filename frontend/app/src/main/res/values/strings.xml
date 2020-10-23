@@ -3,6 +3,7 @@
     <string name="title">Studentbudsjett</string>
     <string name="titlev2">Applikasjon</string>
 
+    <string name="tilbake">Tilbake</string>
     <string name="epost">Epost:</string>
     <string name="epost2">epost</string>
     <string name="pass">Passord:</string>
@@ -39,4 +40,31 @@
     <string name="legg_til">Legg til</string>
     <string name="fjern">Fjern</string>
     <string name="kroner">kr</string>
+    <string name="navn_vare">Navn på varen:</string>
+    <string name="navn_vare_edit">Varenavn</string>
+    <string name="pris">Pris:</string>
+    <string name="pris_vare">Prisen på varen</string>
+    <string name="butikk">Butikk:</string>
+    <string name="butikk_navn">Navnet på butikken</string>
+
+    <string name="toast_feil_register">Feil på registring</string>
+
+
+    <string-array name="butikker">
+        <item>Coop Obs</item>
+        <item>Coop Prix</item>
+        <item>Coop Mega</item>
+        <item>Coop Marked</item>
+        <item>Coop Extra</item>
+        <item>Kiwi</item>
+        <item>Spar</item>
+        <item>Eurospar</item>
+        <item>Bunnpris</item>
+        <item>Rema 1000</item>
+        <item>Joker</item>
+        <item>Matkroken</item>
+        <item>Europris</item>
+        <item>Meny</item>
+    </string-array>
+
 </resources>
