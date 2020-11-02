@@ -22,6 +22,7 @@
         <activity android:name=".StoreActivity"></activity>
         <activity android:name=".Navigation"></activity>
         <activity android:name=".VareDB"></activity>
+        <activity android:name=".ProductSelectActivity"></activity>
     </application>
 
 </manifest>

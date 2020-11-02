@@ -109,18 +109,23 @@ public class AccountManagement {
         EntityManager entityManager = emFactory.createEntityManager();
         entityManager.getTransaction().begin();
         
-        List<Account> accounts = entityManager.createNamedQuery("Account.findByEmail").setParameter("email", username)
-                .getResultList();
-        if (accounts.size() == 0) {
-            return Response.status(Response.Status.NOT_FOUND).build();
+        List<Account> resultByEmail = entityManager.createNamedQuery("Account.findByEmail").setParameter("email", username).getResultList();
+        List<Account> resultByUsername = entityManager.createNamedQuery("Account.findByUsername").setParameter("username", username).getResultList();
+        if (resultByEmail.size() == 0 && resultByUsername.size() == 0) {
+            return Response.status(Response.Status.UNAUTHORIZED).build();
         }
-        accounts.get(0).setSession(String.valueOf(sessionID));
+        if (resultByEmail.size() != 0) {
+            resultByEmail.get(0).setSession(String.valueOf(sessionID));
+            entityManager.merge(resultByEmail.get(0));
+        } else {
+            resultByUsername.get(0).setSession(String.valueOf(sessionID));
+            entityManager.merge(resultByUsername.get(0));
+        }
         
-        entityManager.merge(accounts.get(0));
-        
+              
         entityManager.getTransaction().commit();
        
-        int foundAccount = entityManager.createNamedQuery("Account.authorize").setParameter("email", username).setParameter("password", password)
+        int foundAccount = entityManager.createNamedQuery("Account.authorize2").setParameter("email", username).setParameter("password", password)
                 .getResultList().size();
         entityManager.close();
         

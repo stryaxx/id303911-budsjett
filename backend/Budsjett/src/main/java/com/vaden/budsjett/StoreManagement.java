@@ -74,29 +74,46 @@ public class StoreManagement {
     {
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my_persistence_unit");
         EntityManager entityManager = emFactory.createEntityManager();
-       
+        int productID = rand.nextInt(9999);
         entityManager.getTransaction().begin();
         
         List<Account> account = entityManager.createNamedQuery("Account.findBySession").setParameter("session", sessionId)
                 .getResultList();
         if (account.size() == 0) {
-            return Response.status(Response.Status.METHOD_NOT_ALLOWED).build();
-        }
-        
-        int productId = rand.nextInt(9999);
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        } 
         Products product = new Products();
-        product.setId(String.valueOf(productId));
-        product.setUserid(account.get(0).getId());
         product.setName(name);
         product.setPrice(price);
         product.setStorename(storename);
-        
-        
-        entityManager.merge(product);
+        product.setUserid(account.get(0).getId());
+        product.setId(String.valueOf(productID));
+        entityManager.persist(product);
         
         entityManager.getTransaction().commit();
         entityManager.close();
+        
+        
         return Response.status(Response.Status.OK).entity("OK").build();
+    }
+    
+    @GET
+    @Path("/getProducts")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Products> GetProducts()
+    {
+        EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my_persistence_unit");
+        EntityManager entityManager = emFactory.createEntityManager();
+        int productID = rand.nextInt(9999);
+        entityManager.getTransaction().begin();
+        
+        List<Products> products = entityManager.createNamedQuery("Products.findAll").getResultList();
+         
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        
+        
+        return products;
     }
     
 }

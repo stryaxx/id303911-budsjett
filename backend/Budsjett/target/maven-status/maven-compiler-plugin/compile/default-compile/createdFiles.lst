@@ -1,4 +1,6 @@
 com\vaden\budsjett\resources\JavaEE8Resource.class
 com\vaden\budsjett\AccountManagement.class
 com\vaden\budsjett\JAXRSConfiguration.class
+com\vaden\budsjett\StoreManagement.class
 com\vaden\budsjett\entities\Account.class
+com\vaden\budsjett\entities\Products.class

@@ -35,6 +35,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Account.findByPassword", query = "SELECT a FROM Account a WHERE a.password = :password"),
     @NamedQuery(name = "Account.findBySession", query = "SELECT a FROM Account a WHERE a.session = :session"),
     @NamedQuery(name = "Account.authorize", query = "SELECT a FROM Account a WHERE a.email = :email AND a.password = :password"),
+    @NamedQuery(name = "Account.authorize2", query = "SELECT a FROM Account a WHERE a.email = :email OR a.username = :email AND a.password = :password"),
+    @NamedQuery(name = "Account.findByEmailORusername", query = "SELECT a FROM Account a WHERE a.email = :email OR a.username = :email"),
     @NamedQuery(name = "Account.findByUsername", query = "SELECT a FROM Account a WHERE a.username = :username")})
 public class Account implements Serializable {
 

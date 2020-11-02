@@ -75,6 +75,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/listedItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/secoundNameLayout"
@@ -83,6 +84,60 @@
         android:gravity="center"
         android:textSize="16dp"
         android:text="Du har lagt til følgende varer"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listedItems"
+        android:textColor="@color/black"
+        android:gravity="left"
+        android:textStyle="italic"
+        android:textSize="16dp"
+        android:text="Navn"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listedItems"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textSize="16dp"
+        android:text="Pris"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listedItems"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:gravity="right"
+        android:textSize="16dp"
+        android:text="Butikk"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="550px"
+        android:layout_marginBottom="200px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/productList"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/goBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:background="@color/red"
+        android:text="@string/tilbake"/>
 
 
 </RelativeLayout>

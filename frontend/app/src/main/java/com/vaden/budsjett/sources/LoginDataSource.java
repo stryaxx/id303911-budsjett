@@ -21,6 +21,7 @@ public class LoginDataSource {
             if(c.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream(), StandardCharsets.UTF_8));
                 String token = br.readLine();
+                Services.SESSION_ID = token;
                 System.out.println(token + "BLABLABLBALBLA");
                                 c.getInputStream().close(); // Why?
                 return token;

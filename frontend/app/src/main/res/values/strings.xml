@@ -6,6 +6,7 @@
     <string name="tilbake">Tilbake</string>
     <string name="epost">Epost:</string>
     <string name="epost2">epost</string>
+    <string name="epostORusername">epost eller brukernavn</string>
     <string name="pass">Passord:</string>
     <string name="pass2">passord</string>
 
@@ -28,8 +29,8 @@
     <string name="brukernavn">Brukernavn:</string>
     <string name="brukernavn2">brukernavn</string>
 
-    <string name="success">Success!</string>
-    <string name="fail">Failure!</string>
+    <string name="success">Vellykket!</string>
+    <string name="fail">Feil oppstod!</string>
 
     <string name="ny_handel">Ny handel</string>
     <string name="vareDBBtn">Varedatabase</string>
