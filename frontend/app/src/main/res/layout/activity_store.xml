@@ -143,7 +143,7 @@
         android:gravity="left"
         android:textStyle="italic"
         android:textSize="16dp"
-        android:text="Navn"/>
+        android:text="@string/navn"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -153,7 +153,7 @@
         android:gravity="center"
         android:textStyle="italic"
         android:textSize="16dp"
-        android:text="Pris"/>
+        android:text="@string/prisView"/>
 
     <TextView
         android:id="@+id/butikk"
@@ -164,7 +164,7 @@
         android:textStyle="italic"
         android:gravity="right"
         android:textSize="16dp"
-        android:text="Butikk"/>
+        android:text="@string/butikkView"/>
 
 
     <ScrollView
@@ -189,7 +189,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         android:gravity="center_horizontal"
-        android:text="Bla opp/ned"
+        android:text="@string/scroll"
         android:textColor="@color/black"/>
 
 

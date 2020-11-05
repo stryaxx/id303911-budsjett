@@ -51,6 +51,9 @@
     <string name="pris_vare">Prisen på varen</string>
     <string name="butikk">Butikk:</string>
     <string name="butikk_navn">Navnet på butikken</string>
+    <string name="velg_vare">Velg vare fra listen</string>
+    <string name="lagt_til_varer">Du har lagt til følgende varer</string>
+    <string name="scroll">Bla opp eller ned</string>
 
     <string name="toast_feil_register">Feil på registring</string>
 

@@ -5,7 +5,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Velg vare fra listen"
+        android:text="@string/velg_vare"
         android:textSize="25dp"
         android:gravity="center_horizontal"
         android:textColor="@color/black"/>
