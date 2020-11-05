@@ -16,6 +16,50 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/dinePenger"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/amountEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="xxxx"
+            android:maxLength="5"
+            android:inputType="number"
+            android:padding="5dp"
+            android:background="@drawable/frame"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/kroner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginStart="10dp"
+            android:text="@string/kroner"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/secoundNameLayoutNameLayout"
+        android:layout_below="@id/firstNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="right"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/harIgjenKr"
             android:layout_marginEnd="10dp"
             android:textColor="@color/black"
@@ -27,6 +71,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="xxxx"
+            android:maxLength="8"
+            android:inputType="number"
             android:padding="5dp"
             android:background="@drawable/frame"
             android:textColor="@color/black"
@@ -43,12 +89,15 @@
             android:textSize="18dp" />
     </LinearLayout>
 
+
+
+
     <LinearLayout
-        android:id="@+id/secoundNameLayout"
+        android:id="@+id/thirdNameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/firstNameLayout"
+        android:layout_below="@+id/secoundNameLayoutNameLayout"
         android:orientation="horizontal">
 
         <Button
@@ -56,10 +105,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_weight=".5"
+            android:layout_weight=".25"
             android:textStyle="bold"
-            android:background="@color/red"
+            android:background="@drawable/frame_btn_red"
             android:text="@string/fjern"/>
+
 
         <Button
             android:id="@+id/addBtn"
@@ -67,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textStyle="bold"
-            android:background="@color/green"
+            android:background="@drawable/frame_btn_green"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:text="@string/legg_til" />
@@ -78,7 +128,7 @@
         android:id="@+id/listedItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/secoundNameLayout"
+        android:layout_below="@+id/thirdNameLayout"
         android:textColor="@color/black"
         android:layout_marginTop="20dp"
         android:gravity="center"
@@ -106,6 +156,7 @@
         android:text="Pris"/>
 
     <TextView
+        android:id="@+id/butikk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/listedItems"
@@ -115,11 +166,15 @@
         android:textSize="16dp"
         android:text="Butikk"/>
 
+
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="550px"
-        android:layout_marginBottom="200px">
+        android:layout_below="@+id/butikk"
+        android:background="@drawable/frame"
+        android:fadeScrollbars="false"
+        android:layout_marginBottom="75dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,6 +182,15 @@
             android:id="@+id/productList"
             android:orientation="vertical"></LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
+        android:text="Bla opp/ned"
+        android:textColor="@color/black"/>
 
 
     <Button
@@ -136,7 +200,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:background="@color/red"
+        android:background="@drawable/fram_btn_red_small"
         android:text="@string/tilbake"/>
 
 

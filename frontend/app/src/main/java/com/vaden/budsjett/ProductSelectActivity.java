@@ -11,12 +11,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProductSelectActivity extends AppCompatActivity {
+
+    Button goBackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,14 @@ public class ProductSelectActivity extends AppCompatActivity {
 
         LinearLayout productList = findViewById(R.id.productList);
         StoreDataSource dataSource = new StoreDataSource();
+        goBackBtn = (Button) findViewById(R.id.goBackBtn);
+        goBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductSelectActivity.this, StoreActivity.class);
+                startActivity(intent);
+            }
+        });
 
         JSONArray products = dataSource.retrieve();
 

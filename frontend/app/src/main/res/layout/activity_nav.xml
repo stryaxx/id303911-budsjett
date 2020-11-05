@@ -11,6 +11,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:gravity="center_horizontal"
         android:textColor="@color/red"
         android:textStyle="italic"
         android:textSize="18dp" />
@@ -24,19 +25,24 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/vareDBBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:background="@drawable/frame_btn"
+            android:layout_marginTop="20dp"
+            android:text="@string/vareDBBtn" />
+
+        <Button
             android:id="@+id/nyhandelBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-
+            android:textStyle="bold"
+            android:background="@drawable/frame_btn_yellow"
             android:text="@string/ny_handel" />
 
-        <Button
-            android:id="@+id/vareDBBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/vareDBBtn" />
+
 
         <Button
             android:id="@+id/logutBtn"
@@ -45,7 +51,7 @@
             android:paddingLeft="50dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:background="@color/red"
+            android:background="@drawable/frame_btn_red"
             android:textStyle="italic"
             android:text="@string/logutBtn" />
 

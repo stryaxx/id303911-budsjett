@@ -70,6 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_weight=".60"
                     android:text="@string/pris"
                     android:textColor="#000"
@@ -80,12 +81,19 @@
                     android:id="@+id/priceItemEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:inputType="number"
+                    android:gravity="left"
+                    android:layout_marginStart="20dp"
                     android:layout_weight=".40"
-                    android:hint="@string/pris_vare" />
+                    android:hint="@string/pris_vare"
+                    android:inputType="number" />
 
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kroner"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/black"/>
             </LinearLayout>
 
             <LinearLayout
@@ -110,10 +118,10 @@
                     android:id="@+id/storeEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textAutoComplete"
                     android:layout_marginEnd="20dp"
                     android:layout_weight=".40"
-                    android:hint="@string/butikk_navn" />
+                    android:hint="@string/butikk_navn"
+                    android:inputType="textAutoComplete" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -123,17 +131,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ScrollViewLayout"
-        android:background="@color/green"
+        android:background="@drawable/frame_btn_green"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
         android:text="@string/legg_til"
         android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
         android:layout_below="@+id/addBtn"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
         <Button
             android:id="@+id/goBackBtn"
@@ -142,7 +152,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="50dp"
-            android:background="@color/red"
+            android:background="@drawable/frame_btn_red"
             android:gravity="center"
             android:padding="15dp"
             android:text="@string/tilbake"
