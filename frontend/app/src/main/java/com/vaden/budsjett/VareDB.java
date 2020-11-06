@@ -45,10 +45,17 @@ public class VareDB extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dataSource.add(nameItemEdit.getText().toString(), priceItemEdit.getText().toString(), storeEdit.getText().toString(), Services.SESSION_ID);
-                Toast.makeText(VareDB.this, "Varen ble lagt til!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(VareDB.this, VareDB.class);
-                startActivity(intent);
+                String name = nameItemEdit.getText().toString();
+                String price = priceItemEdit.getText().toString();
+                String store = storeEdit.getText().toString();
+                if (name.length() != 0 && price.length() != 0 && store.length() != 0) {
+                    dataSource.add(nameItemEdit.getText().toString(), priceItemEdit.getText().toString(), storeEdit.getText().toString(), Services.SESSION_ID);
+                    Toast.makeText(VareDB.this, R.string.toast_vare_lagt_til, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(VareDB.this, VareDB.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(VareDB.this, R.string.toast_tomt_felt, Toast.LENGTH_LONG).show();
+                }
             }
         });
 

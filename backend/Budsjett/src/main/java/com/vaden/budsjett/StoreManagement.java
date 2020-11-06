@@ -77,6 +77,7 @@ public class StoreManagement {
         int productID = rand.nextInt(9999);
         entityManager.getTransaction().begin();
         
+               
         List<Account> account = entityManager.createNamedQuery("Account.findBySession").setParameter("session", sessionId)
                 .getResultList();
         if (account.size() == 0) {
@@ -100,14 +101,20 @@ public class StoreManagement {
     @GET
     @Path("/getProducts")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Products> GetProducts()
+    public List<Products> GetProducts(@QueryParam("sessionId")String sessionId)
     {
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my_persistence_unit");
         EntityManager entityManager = emFactory.createEntityManager();
         int productID = rand.nextInt(9999);
         entityManager.getTransaction().begin();
         
-        List<Products> products = entityManager.createNamedQuery("Products.findAll").getResultList();
+        List<Account> account = entityManager.createNamedQuery("Account.findBySession").setParameter("session", sessionId)
+                .getResultList();
+        if (account.size() == 0) {
+            return null;
+        }
+        
+        List<Products> products = entityManager.createNamedQuery("Products.findByUserid").setParameter("userid", account.get(0).getId()).getResultList();
          
         entityManager.getTransaction().commit();
         entityManager.close();

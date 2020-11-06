@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-
 import com.vaden.budsjett.sources.StoreDataSource;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,12 +35,11 @@ public class ProductSelectActivity extends AppCompatActivity {
             }
         });
 
-        JSONArray products = dataSource.retrieve();
+        JSONArray products = dataSource.retrieve(Services.SESSION_ID);
 
         for (int i = 0; i < products.length(); i++) {
             try {
                 JSONObject product = (JSONObject)products.get(i);
-
 
                 LayoutInflater inflater = this.getLayoutInflater();
                 final View view = inflater.inflate(R.layout.activity_product_list_item, productList, false);
@@ -55,8 +52,6 @@ public class ProductSelectActivity extends AppCompatActivity {
                 nameItem.setText(product.get("name").toString());
                 priceItem.setText(product.get("price").toString());
                 storenameItem.setText(product.get("storename").toString());
-
-
 
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -73,11 +68,9 @@ public class ProductSelectActivity extends AppCompatActivity {
 
                         setResult(Activity.RESULT_OK, data);
                         finish();
-
                     }
 
                 });
-
 
             } catch (JSONException e) {
                 e.printStackTrace();

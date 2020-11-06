@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vaden.budsjett.sources.RegisterDataSource;
@@ -52,22 +53,34 @@ public class CreateNewAccount extends AppCompatActivity {
                 Intent intent = new Intent(CreateNewAccount.this, MainActivity.class);
                 startActivity(intent);
 
-                if (registerDataSource.register(usernameEdit.getText().toString(),
-                        passEdit.getText().toString(),
-                        firstNameEdit.getText().toString(),
-                        lastNameEdit.getText().toString(),
-                        emailNameEdit.getText().toString(),
-                        streetNameEdit.getText().toString(),
-                        cityNameEdit.getText().toString())) {
-                    //Success
-                    System.out.println("SUCCESS ON REGISTER");
+                String user = usernameEdit.getText().toString();
+                String pass = passEdit.getText().toString();
+                String fname = firstNameEdit.getText().toString();
+                String lname = lastNameEdit.getText().toString();
+                String email = emailNameEdit.getText().toString();
+                String street = streetNameEdit.getText().toString();
+                String city = cityNameEdit.getText().toString();
+                if (user.length() != 0 && pass.length() != 0 && fname.length() != 0 && lname.length() != 0 && email.length() != 0 && street.length() != 0 && city.length() != 0) {
+                    if (registerDataSource.register(usernameEdit.getText().toString(),
+                            passEdit.getText().toString(),
+                            firstNameEdit.getText().toString(),
+                            lastNameEdit.getText().toString(),
+                            emailNameEdit.getText().toString(),
+                            streetNameEdit.getText().toString(),
+                            cityNameEdit.getText().toString())) {
+                        //Success
+                        System.out.println("SUCCESS ON REGISTER");
 
 
+                    } else {
+                        //Failure
+                        System.out.println("FAILURE ON REGISTER");
+                        Toast.makeText(CreateNewAccount.this, R.string.toast_feil, Toast.LENGTH_LONG).show();
+                    }
                 } else {
-                    //Failure
-                    System.out.println("FAILURE ON REGISTER");
-                    Toast.makeText(CreateNewAccount.this, "FAILURE! TRY AGAIN!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CreateNewAccount.this, R.string.toast_tomt_felt, Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 

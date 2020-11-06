@@ -39,7 +39,11 @@ public class Navigation extends AppCompatActivity {
         logutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO CODE HERE
+                Services.SESSION_ID = "";
+                Intent intent = new Intent(Navigation.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
             }
         });
 

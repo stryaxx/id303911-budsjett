@@ -64,7 +64,6 @@ public class StoreActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("BLÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ");
                 Intent intent = new Intent(StoreActivity.this, ProductSelectActivity.class);
                 startActivityForResult(intent, 123);
 
@@ -118,9 +117,7 @@ public class StoreActivity extends AppCompatActivity {
 
             itemSum += Float.parseFloat(data.getStringExtra("priceItem"));
             calculateSum();
-
         }
-
     }
 
     private void calculateSum() {

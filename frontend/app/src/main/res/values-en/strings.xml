@@ -43,7 +43,12 @@
     <string name="butikk">"Storename: "</string>
     <string name="butikk_navn">Name on the store</string>
     <string name="lagt_til_varer">You added following items</string>
-    <string name="toast_feil_register">Failure on register</string>
+    <string name="toast_feil_register">Failure on register!</string>
+    <string name="toast_vare_lagt_til">Item has been added!</string>
+    <string name="toast_tomt_felt">Fill in labels!</string>
+    <string name="toast_feil">Error! Please try again!</string>
+    <string name="toast_login_vellykket">Log in success!</string>
+    <string name="toast_login_feil">Username/email or password are wrong!</string>
     <string name="scroll">Scroll up or down</string>
     <string name="velg_vare">Select item from the list</string>
 </resources>

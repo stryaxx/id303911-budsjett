@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
             //SUCCESS
             System.out.println("Login success!");
 
-            Toast.makeText(MainActivity.this, "Login success!", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, R.string.toast_login_vellykket, Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, Navigation.class);
             startActivity(intent);
         } else {
             //FAILED LOGIN
             System.out.println("Email or password failed");
-            Toast.makeText(MainActivity.this, "Fail login! Either email or password are wrong.", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, R.string.toast_login_feil, Toast.LENGTH_LONG).show();
         }
 
 

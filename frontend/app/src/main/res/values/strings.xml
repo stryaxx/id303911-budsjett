@@ -55,7 +55,12 @@
     <string name="lagt_til_varer">Du har lagt til følgende varer</string>
     <string name="scroll">Bla opp eller ned</string>
 
-    <string name="toast_feil_register">Feil på registring</string>
+    <string name="toast_feil_register">Feil på registring!</string>
+    <string name="toast_vare_lagt_til">Varen ble lagt til!</string>
+    <string name="toast_tomt_felt">Fyll ut feltene!</string>
+    <string name="toast_feil">Noe gikk galt! Prøv igjen</string>
+    <string name="toast_login_vellykket">Logg inn vellykket!</string>
+    <string name="toast_login_feil">Brukernavn/Epost eller passord er feil</string>
 
 
     <string-array name="butikker">
