@@ -6,5 +6,6 @@ public class Services {
     public static final String REGISTER_URL = BASE_URL + "Budsjett/api/account/register";
     public static final String STORE_GET_URL = BASE_URL + "Budsjett/api/Store/getProducts";
     public static final String STORE_ADD_URL = BASE_URL + "Budsjett/api/Store/add";
+    public static final String STORE_REMOVE_URL = BASE_URL + "Budsjett/api/Store/remove";
     public static String SESSION_ID = "";
 }

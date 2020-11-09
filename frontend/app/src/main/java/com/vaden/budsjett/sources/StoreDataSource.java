@@ -41,6 +41,35 @@ public class StoreDataSource {
         }
     }
 
+    public boolean removeProduct(String itemId, String sessionId) {
+
+        HttpURLConnection c = null;
+        try {
+            URL url = new URL(Services.STORE_REMOVE_URL
+                    + "?itemId=" +itemId+
+                    "&sessionId=" +sessionId);
+            c = (HttpURLConnection) url.openConnection();
+            c.setUseCaches(true);
+            c.setRequestMethod("GET");
+
+            if (c.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                System.out.println("TRUE: " + true);
+                return true;
+            } else {
+                System.out.println("FALSE: " + false);
+                return false;
+            }
+
+
+
+        } catch (Exception e) {
+            System.out.println("FEILMELDING: " + e);
+            return false;
+        } finally {
+            if (c != null) c.disconnect();
+        }
+    }
+
     public JSONArray retrieve(String session) {
         JSONArray items = null;
         HttpURLConnection c = null;

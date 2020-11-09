@@ -234,21 +234,32 @@
         android:paddingBottom="10dp"
         android:layout_below="@+id/ScrollViewLayout"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/goBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_btn_small"
+            android:text="@string/tilbake"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/createAccBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/frame_btn_red"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/frame_btn_green"
             android:gravity="center"
             android:padding="15dp"
             android:text="@string/opprett_bruker"
-            android:textColor="#FFF"
+            android:textColor="@color/black"
             android:textSize="15sp" />
+
+
+
     </LinearLayout>
 
 

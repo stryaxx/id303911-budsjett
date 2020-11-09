@@ -92,7 +92,16 @@ public class StoreActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         System.out.println(data.getStringExtra("nameItem"));
-
+        if (data == null) {
+            return;
+        }
+        try {
+            data.getStringExtra("nameItem");
+            data.getStringExtra("priceItem");
+            data.getStringExtra("storename");
+        } catch (NullPointerException e) {
+            return;
+        }
         if (requestCode == 123) {
             LayoutInflater inflater = this.getLayoutInflater();
             final View view = inflater.inflate(R.layout.activity_product_list_item, productList, false);

@@ -19,7 +19,7 @@ public class CreateNewAccount extends AppCompatActivity {
 
     EditText firstNameEdit, lastNameEdit, streetNameEdit, cityNameEdit, emailNameEdit,
              usernameEdit, passEdit;
-    Button createAccBtn;
+    Button createAccBtn, goBackBtn;
 
     RegisterDataSource registerDataSource;
 
@@ -38,6 +38,14 @@ public class CreateNewAccount extends AppCompatActivity {
 
         registerDataSource = new RegisterDataSource();
 
+        goBackBtn = (Button) findViewById(R.id.goBackBtn);
+        goBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreateNewAccount.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
         createAccBtn = (Button) findViewById(R.id.createAccBtn);
         createAccBtn.setOnClickListener(new View.OnClickListener() {
             @Override

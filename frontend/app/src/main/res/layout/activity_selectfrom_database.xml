@@ -3,6 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/infoTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/velg_vare"
@@ -10,31 +11,62 @@
         android:gravity="center_horizontal"
         android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/goBackBtn"
+    <LinearLayout
+        android:id="@+id/lineBtns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="75dp"
-        android:background="@drawable/fram_btn_red_small"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/infoTxt">
+
+    <Button
+        android:id="@+id/goBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/frame_btn_small"
         android:gravity="center"
-        android:padding="15dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/tilbake"
         android:textColor="@color/black"
         android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/removeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fram_btn_red_small"
+        android:text="@string/fjern"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_btn_green"
+            android:text="@string/legg_til"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
 
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/lineBtns"
         android:layout_marginBottom="200px">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="250px"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20px"
             android:id="@+id/productList"
             android:orientation="vertical"></LinearLayout>
     </ScrollView>

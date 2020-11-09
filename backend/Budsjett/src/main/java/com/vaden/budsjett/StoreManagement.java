@@ -105,7 +105,7 @@ public class StoreManagement {
     {
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my_persistence_unit");
         EntityManager entityManager = emFactory.createEntityManager();
-        int productID = rand.nextInt(9999);
+       
         entityManager.getTransaction().begin();
         
         List<Account> account = entityManager.createNamedQuery("Account.findBySession").setParameter("session", sessionId)
@@ -121,6 +121,33 @@ public class StoreManagement {
         
         
         return products;
+    }
+    
+    @GET
+    @Path("/remove")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response Remove(@QueryParam("itemId")String itemId, 
+            @QueryParam("sessionId")String sessionId)
+    {
+        EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my_persistence_unit");
+        EntityManager entityManager = emFactory.createEntityManager();
+  
+        entityManager.getTransaction().begin();
+        
+               
+        List<Account> account = entityManager.createNamedQuery("Account.findBySession").setParameter("session", sessionId)
+                .getResultList();
+        if (account.size() == 0) {
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        } 
+        List<Products> products = entityManager.createNamedQuery("Products.findById").setParameter("id", itemId).getResultList();
+        entityManager.remove(products.get(0));
+        
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        
+        
+        return Response.status(Response.Status.OK).entity("OK").build();
     }
     
 }
