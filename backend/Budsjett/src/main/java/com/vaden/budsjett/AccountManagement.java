@@ -6,6 +6,8 @@
 package com.vaden.budsjett;
 
 import com.vaden.budsjett.entities.Account;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Random;
 import javax.ws.rs.core.Context;
@@ -83,7 +85,7 @@ public class AccountManagement {
         Account account = new Account();
         account.setUsername(username);
         account.setId(String.valueOf(userID));
-        account.setPassword(password);
+        account.setPassword(hashPassword(password));
         account.setEmail(email);
         account.setCity(city);
         account.setAddress(address);
@@ -125,7 +127,7 @@ public class AccountManagement {
               
         entityManager.getTransaction().commit();
        
-        int foundAccount = entityManager.createNamedQuery("Account.authorize2").setParameter("email", username).setParameter("password", password)
+        int foundAccount = entityManager.createNamedQuery("Account.authorize2").setParameter("email", username).setParameter("password", hashPassword(password))
                 .getResultList().size();
         entityManager.close();
         
@@ -137,6 +139,34 @@ public class AccountManagement {
             //Failure
             return Response.status(Response.Status.NOT_FOUND).build();
         }     
+    }
+    
+    private String hashPassword(String password){
+        String hashedPassword = "";
+        
+        try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            //Add password bytes to digest
+            md.update(password.getBytes());
+            //Get the hash's bytes 
+            byte[] bytes = md.digest();
+            //This bytes[] has bytes in decimal format;
+            //Convert it to hexadecimal format
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            //Get complete hashed password in hex format
+            hashedPassword = sb.toString();
+        } 
+        catch (NoSuchAlgorithmException e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return hashedPassword;
     }
     
     
