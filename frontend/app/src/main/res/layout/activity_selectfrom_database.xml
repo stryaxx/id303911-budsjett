@@ -71,4 +71,13 @@
             android:orientation="vertical"></LinearLayout>
     </ScrollView>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
+        android:text="@string/scroll"
+        android:textColor="@color/black"/>
+
 </RelativeLayout>
